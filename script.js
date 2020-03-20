@@ -35,7 +35,7 @@ function generatePassword() {
     password += Nums;
   }
   //Needs to create variable for final password to display when button is pressed
-  var finalPass = ""
+  var finalPass = "";
   //for loop created to go through number of times desired by user; declared through input of complexity variable by user
   //IE: If user wants password to be 10 characters, then loops through 10 times.
   for (i = 0; i < lengthComp; i++) {
@@ -63,7 +63,14 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  // Saving password below
   passwordText.value = password;
+  
+  //add password to textbox/display area
+  document.getElementById("password").value = password;
+
+  //add password to previously generated password section
+  document.getElementById("lastNums").innerHTML += "<li>" + password + "</li>"
 }
 
 // // Add event listener to generate button
@@ -88,3 +95,6 @@ function copyPassword() {
 
 // Event listener is stated on backside to run function of copyPassword when clicked
 cpyBtn.addEventListener("click", copyPassword);
+
+
+
