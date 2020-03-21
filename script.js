@@ -65,12 +65,15 @@ function writePassword() {
 
   // Saving password below
   passwordText.value = password;
-  
+
+
   //add password to textbox/display area
   document.getElementById("password").value = password;
 
   //add password to previously generated password section
   document.getElementById("lastNums").innerHTML += "<li>" + password + "</li>"
+
+
 }
 
 // // Add event listener to generate button
