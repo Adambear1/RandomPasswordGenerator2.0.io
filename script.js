@@ -66,15 +66,35 @@ function writePassword() {
   // Saving password below
   passwordText.value = password;
 
-
   //add password to textbox/display area
+
   document.getElementById("password").value = password;
 
-  //add password to previously generated password section
   document.getElementById("lastNums").innerHTML += "<li>" + password + "</li>"
 
-
 }
+
+
+
+
+// /// work/////
+var grabLi = document.querySelector("#lastNums")
+
+function grabPass(event) {
+  event.stopPropagation();
+  event.target.setAttribute(
+    "style",
+    "background-color: orange"
+  ); 
+console.log(event.target.textContent);
+}
+
+
+grabLi.addEventListener("click", grabPass);
+
+///////////
+
+
 
 // // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
