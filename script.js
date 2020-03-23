@@ -74,26 +74,31 @@ function writePassword() {
 
 }
 
+////// Section for grabbing past passwords & copying to clipboard
 
-
-
-// /// work/////
+// Create variable to target previous password section
 var grabLi = document.querySelector("#lastNums")
 
+// Function to click on element within previous passwords section, highlight, & be able to copy
 function grabPass(event) {
+  //Event of stopPropogation to prevent bubbling & that only one value is selected
   event.stopPropagation();
+  //Sets selected target attribute to the color red
   event.target.setAttribute(
     "style",
-    "background-color: orange"
+    "color: red;"
   ); 
+  //Creating new variable to house value of selected content
+  var selectPass = event.target.textContent;
+  //Changes password element within frame to new variable
+  document.getElementById("password").value = selectPass;
+
+//Console log to test functionality
 console.log(event.target.textContent);
+
 }
-
-
+//Calling on function via click argument
 grabLi.addEventListener("click", grabPass);
-
-///////////
-
 
 
 // // Add event listener to generate button
